@@ -9,18 +9,24 @@ public class lottoView {
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		Random r = new Random();
+		lottoController l1 = new lottoController();
 		
 		int money = 5000;
 		int count = (int)money/1000;
 		
+		l1.lottoMaker(count);
+		
 		// 당첨 번호 생성
-		
-		
+		List<Integer> lottoList = new ArrayList<Integer>();
+		for (int i=1; i<46; i++) {
+				lottoList.add(i);	
+		}
 			List<Integer> lottoNum = new ArrayList<Integer>();
 		while(lottoNum.size() == 6) {
 			int result = lottoList.get(r.nextInt(45)+1);
 			lottoNum.add(result);
 		} 
+		
 		try {
 		// 번호 입력
 		List<Integer> inputNum = new ArrayList<Integer>();
@@ -33,10 +39,8 @@ public class lottoView {
 		System.out.println("보너스 번호를 제출하시오.");
 		int inputBonus = sc.nextInt();
 		
-		} catch (Exception e) {
-			
-			
-		}
+		} catch (Exception e) {}
+		
 		
 		// 예외처리
 //		
